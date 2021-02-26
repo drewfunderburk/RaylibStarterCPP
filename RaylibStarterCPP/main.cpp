@@ -26,12 +26,15 @@ unsigned int DrewHash(unsigned char* data)
 {
     unsigned int hash = 0;
 
+    // Loop through every char
     for (unsigned char* i = data; *i != '\0'; i++)
     {
+        // Multiply char by two and assign to hash
         hash = *i * 2;
+        // Raise i to the power of it's size and add to hash
         hash += pow(*i, sizeof(i));
     }
-
+    // Return hash bit shifted 10 to the left
     return (hash << 10);
 }
 
